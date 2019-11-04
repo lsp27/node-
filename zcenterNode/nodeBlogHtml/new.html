@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新建博客</title>
+  <style type="text/css">
+  body{
+    margin: 0 20px;
+    line-height: 1;
+  }
+
+  a{
+    text-decoration-line: none;
+    cursor: pointer;
+  }
+  table{
+    border: 1px solid #ccc
+  }
+  table th {
+    text-align: left;
+    background-color: #f1f1f1;
+  }
+  table td:nth-child(1) {
+    width: 300px;
+  }
+  </style>
+</head>
+<body>
+  <h1 style="border-bottom:1px solid #ccc;padding-bottom:10px">新建博客</h1>
+  <form action="" method="post">
+    <input type="text" id='title'>
+    <textarea name="" id="content" cols="30" rows="10"></textarea>
+    <input type="submit" id='btn' value='创建'>
+  </form>
+  
+
+
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+  function get(url) {
+    return $.get(url)
+  }
+  function post(url,data ={}){
+    return $.ajax({
+      type: 'post',
+      url,
+      data: JSON.stringify(data),
+      contentType: 'application/json'
+    })
+  }
+  function getUrlParams() {
+    let paramStr = location.href.split('?')[1] || ''
+    paramStr = paramStr.split('#')[0]
+    const result = {}
+    paramStr.split('&').forEach(itemStr => {
+      const arr = itemStr.split('=')
+      const key = arr[0]
+      const val = arr[1]
+      result[key] = val
+    })
+    return result
+  }
+
+  //拼接接口url
+  let url = '/api/blog/new' // 增加一个 isadmin=1参数，使用登陆者用户名，后端也需要修改
+ 
+
+  $('#btn').click((e) => {
+    e.preventDefault()
+    const data = {
+      title: $('#title').val(),
+      content: $('#content').val()
+    }
+    post(url,data).then(res => {
+      if(res.errno !== 0){
+        alert('新建失败')
+      }else{
+        location.href='/admin.html'
+      }
+    })
+  })
+  
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

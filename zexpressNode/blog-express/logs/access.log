@@ -1,0 +1,4 @@
+[0mGET /api/blog/detail?id=9 [36m304 [0m12.248 ms - -[0m
+::ffff:127.0.0.1 - - [10/Oct/2019:16:04:14 +0000] "GET /api/blog/detail?id=9 HTTP/1.0" 304 - "http://localhost:8080/detail.html?id=9" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+::ffff:127.0.0.1 - - [10/Oct/2019:16:04:17 +0000] "GET /api/blog/list?isadmin=1 HTTP/1.0" 304 - "http://localhost:8080/admin.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+::ffff:127.0.0.1 - - [10/Oct/2019:16:04:41 +0000] "GET /api/blog/detail?id=4 HTTP/1.0" 200 155 "http://localhost:8080/detail.html?id=4" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"

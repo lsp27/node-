@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <label>
+        用户名 <input type="text" id="textUsername" />
+    </label>
+    <label>
+      密码 <input type="password" id="textPassword" />
+    </label>
+    <button id='loginBtn'>登陆</button>
+  </div>
+
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script>
+
+function get(url) {
+    return $.get(url)
+  }
+  function post(url,data ={}){
+    return $.ajax({
+      type: 'post',
+      url,
+      data: JSON.stringify(data),
+      contentType: 'application/json'
+    })
+  }
+
+    let url = '/api/user/login'
+    $('#loginBtn').click(e => {
+      const body = {
+        username: $('#textUsername').val(),
+        password: $('#textPassword').val()
+      }
+      post(url,body).then(res => {
+        if(res.errno !== 0){
+          alert('登陆失败')
+        }else{
+          location.href='admin.html'
+        }
+      })
+    })
+  </script>
+</body>
+</html>

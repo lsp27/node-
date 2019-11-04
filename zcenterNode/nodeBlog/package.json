@@ -1,0 +1,19 @@
+{
+  "name": "02-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
+    "prd": "corss-env NODE_ENV=production nodemon ./bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^5.2.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
+    "redis": "^2.8.0"
+  }
+}
