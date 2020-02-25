@@ -46,7 +46,6 @@ class LikeExpress {
     let curRoutes = []
     curRoutes = curRoutes.concat(this.routes.all)
     curRoutes = curRoutes.concat(this.routes[method])
-
     curRoutes.forEach(routeInfo => {
       if(url.indexOf(routeInfo.path) === 0) {
         stack = stack.concat(routeInfo.stack)
